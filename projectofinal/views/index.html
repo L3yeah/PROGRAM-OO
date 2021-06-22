@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>Trabajadores de la empresa</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Lista de trabajadores</h1>
+                    <p class="lead text-muted" id="result"></p>
+                    <p>
+                        <a href="#" class="btn btn-primary my-2" onclick="clearScreen();">Limpiar pantalla</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="../resources/img/Employees-3117af3d30fa438bb6dd3ad4141a8b4c.jpeg"
+                                class="img-rounded" alt="Cinque Terre">
+                            <div class="card-body">
+                                <p class="card-text">Obtener la informacion de los empleados trabajando en la empresa.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" id="btnEmpAll"
+                                            onclick="getAllEmployees();">Mostrar todos los trabajadores</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="../resources/img/search.jpeg" class="img-rounded" alt="Cinque Terre">
+                            <div class="card-body">
+                                <p class="card-text">Obtener informacion de un empleado en especifico.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" id="btnEmpId"
+                                            onclick="getSelEmployees();">Mostrar empleados por ID</button>
+                                        <input type="text" id="ddEmployees"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="../resources/img/add.png" class="img-rounded" style="background-color:white;"
+                                width="414" height="235">
+                            <div class="card-body">
+                                <p class="card-text">Añade un nuevo empleado ingresando la información requerida.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex flex-column">
+                                        <input type="text" id="inID"> ID</select>
+                                        <input type="text" id="inName"> Nombre</select>
+                                        <input type="text" id="inLN"> Apellido</select>
+                                        <input type="text" id="inTel"> Telefono</select>
+                                        <input type="text" id="inMail"> Correo</select>
+                                        <input type="text" id="inAge"> Edad</select>
+                                        <button type="button" class="btn btn-primary" id="btnEmpAdd" onclick="addEmployee();">Añadir empleado</button>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="../resources/img/trash.jpeg" class="img-rounded" style="background-color:white;">
+                            <div class="card-body">
+                                <p class="card-text">Elimina algun empleado de la lista actual con su ID.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" id="btnEmpDel" onclick="delEmployees();">Borrar empleado</button>  
+                                        <input type="text" id="delEmp"></select> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Arriba</a>
+            </p>
+            <p class="mb-1">Lilia Sarahi Trujillo Rivera, Brandon Chacon 2A </p>
+        </div>
+    </footer>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../resources/js/api.js"></script>
+</body>
+</html>
